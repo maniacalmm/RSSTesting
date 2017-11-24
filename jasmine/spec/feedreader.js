@@ -91,6 +91,7 @@ $(function() {
 
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
+        // load different entry each time, and check if entry is larger than 1
         var idx = 0;
         beforeEach(function(done) {
             loadFeed(idx, done);
@@ -143,6 +144,7 @@ $(function() {
             });
          })
 
+        // default is 3, and change to 2 and 1 and 0 to see if the content changes
          it('first load', function(done) {
             loadFeed(2, function() {
             expect(result === $('.feed').find('h2').text()).toBe(false);
