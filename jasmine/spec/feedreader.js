@@ -92,10 +92,10 @@ $(function() {
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
         // load different entry each time, and check if entry is larger than 1
-        var idx = 0;
+        var idx  = -1;
         beforeEach(function(done) {
-            loadFeed(idx, done);
             idx = idx + 1;
+            loadFeed(idx, done);
         });
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -142,7 +142,7 @@ $(function() {
                 result = $('.feed').find('h2').text();
                 done();
             });
-         })
+         });
 
         // default is 3, and change to 2 and 1 and 0 to see if the content changes
          it('first load', function(done) {
